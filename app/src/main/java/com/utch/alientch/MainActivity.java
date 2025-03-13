@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setEmptyView(findViewById(android.R.id.empty));
 
         // Agregar algunos especialistas de ejemplo
-        especialistas.add(new Especialistas("Dr. Juan Pérez", "Cardiólogo", "123-456-7890"));
-        especialistas.add(new Especialistas("Dra. María Gómez", "Dermatóloga", "987-654-3210"));
+        especialistas.add(new Especialistas("Eduardo", "Programación", "666-666-666"));
+        especialistas.add(new Especialistas("Alan", "Química", "987-654-3210"));
         adapter.notifyDataSetChanged();
     }
 }
