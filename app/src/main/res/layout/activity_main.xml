@@ -10,11 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
-            android:id="@android:id/list"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp" />
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@android:id/empty"
@@ -23,6 +22,13 @@
             android:layout_gravity="center"
             android:text="No hay especialistas disponibles"
             android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar Sesión"/>
+
 
     </FrameLayout>
 
