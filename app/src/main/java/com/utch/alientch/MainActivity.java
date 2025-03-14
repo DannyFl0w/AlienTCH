@@ -14,13 +14,20 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null) {
-            startActivity(new Intent(this, LoginActivity.class));
+        auth = FirebaseAuth.getInstance();
+
+        FirebaseUser ActUser = auth.getCurrentUser();
+        if (ActUser == null) {
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
+            return;
+        }
         setContentView(R.layout.activity_main);
 
         // Inicializar RecyclerView
@@ -38,4 +45,4 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 }
-}
+
