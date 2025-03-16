@@ -8,20 +8,23 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="99dp">
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="322dp" />
 
-        <TextView
-            android:id="@android:id/empty"
+        <Button
+            android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="No hay especialistas disponibles"
-            android:textSize="18sp" />
+            android:layout_marginBottom="16dp"
+            android:text="Log Out" />
 
 
     </FrameLayout>
