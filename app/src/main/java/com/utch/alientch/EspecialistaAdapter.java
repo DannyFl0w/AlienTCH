@@ -3,6 +3,7 @@ package com.utch.alientch;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class EspecialistaAdapter extends RecyclerView.Adapter<EspecialistaAdapter.ViewHolder> {
 
-    private final List<Especialistas> listaEspecialistas;
+    private List<Especialistas> listaEspecialistas;
 
     public EspecialistaAdapter(List<Especialistas> listaEspecialistas) {
         this.listaEspecialistas = listaEspecialistas;
@@ -28,9 +29,11 @@ public class EspecialistaAdapter extends RecyclerView.Adapter<EspecialistaAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Especialistas especialista = listaEspecialistas.get(position);
-        holder.tvNombre.setText(especialista.getNombre());
-        holder.tvEspecialidad.setText(especialista.getEspecialidad());
-        holder.tvTelefono.setText(especialista.getTelefono());
+        holder.txtNombre.setText(especialista.getNombre());
+        holder.txtEspecialidad.setText(especialista.getEspecialidad());
+        holder.txtTelefono.setText(especialista.getTelefono());
+        holder.imgEspecialista.setImageResource(especialista.getImagenResId());
+        holder.HoraAtencion.setText(especialista.getHoraAtencion());
     }
 
     @Override
@@ -39,14 +42,16 @@ public class EspecialistaAdapter extends RecyclerView.Adapter<EspecialistaAdapte
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNombre, tvEspecialidad, tvTelefono;
+        TextView txtNombre, txtEspecialidad, txtTelefono , HoraAtencion;
+        ImageView imgEspecialista;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvNombre = itemView.findViewById(R.id.tvNombre);
-            tvEspecialidad = itemView.findViewById(R.id.tvEspecialidad);
-            tvTelefono = itemView.findViewById(R.id.tvTelefono);
+            txtNombre = itemView.findViewById(R.id.tvNombre);
+            txtEspecialidad = itemView.findViewById(R.id.tvEspecialidad);
+            txtTelefono = itemView.findViewById(R.id.tvTelefono);
+            imgEspecialista = itemView.findViewById(R.id.imgEspecialista);
+            HoraAtencion = itemView.findViewById(R.id.HoraAtencion);
         }
     }
 }
-

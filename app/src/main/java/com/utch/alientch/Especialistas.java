@@ -7,10 +7,16 @@ public class Especialistas {
     private final String especialidad;
     private final String telefono;
 
-    public Especialistas(String nombre, String especialidad, String telefono) {
+    private int imagenResId;
+
+    private String HoraAtencion;
+
+    public Especialistas(String nombre, String especialidad, String telefono, int imagenResId, String HoraAtencion) {
         this.nombre = nombre;
         this.especialidad = especialidad;
         this.telefono = telefono;
+        this.imagenResId = imagenResId;
+        this.HoraAtencion = HoraAtencion;
     }
 
     public String getNombre() {
@@ -23,6 +29,14 @@ public class Especialistas {
 
     public String getTelefono() {
         return telefono;
+    }
+
+    public int getImagenResId() {
+        return imagenResId;
+    }
+
+    public String getHoraAtencion() {
+        return HoraAtencion;
     }
 
     @NonNull
